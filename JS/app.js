@@ -1,3 +1,11 @@
+import { genererRecetteAleatoire } from "./recetteAleatoire.js";
+import { viande, condiment, sauce, fromage, supplément, categories } from "./data.js";
+
+genererRecetteAleatoire();
+
+
+
+
 /*const game = document.querySelector("#game");
 
 init();

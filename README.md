@@ -13,3 +13,22 @@ Fonctionnalités :
 - V1 : 10 compos prédéfinis dans le html, V2 : Générer des recettes aléatoirement avec du JS.
 
 Faire des catégories d'ingrédients facilitera les positions des ingrédients et l'algorythme de génération de recettes
+
+
+
+JS :
+
+récupérer les catégories
+fonctions par catégorie (onclick -> attribution de la classe/positionnement dans le burger) + déplacement inverse
+Recette générée aléatoirement
+Fonction de vérif recette/burger fait/gestion de points
+Fonction temps écoulé : fonction cacher/afficher jeu (classe à retirer/ajouter via le JS), fonction récup chrono, fonction afficher fin de jeu
+
+CSS :
+
+Faire les icones clients+ingrédients 
+Classe et id chacun, affiché par défaut
+Boutons
+Préparer les classes utilisées par le JS
+
+

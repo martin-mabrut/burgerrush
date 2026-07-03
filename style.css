@@ -18,6 +18,33 @@ header {
     position: relative;
 }
 
+.pain-haut, .pain-bas {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+.titre-timer {
+    text-align: center;
+    font-weight: 700;
+    color: black;
+    margin-top: 5%;
+}
+
+.cadre-timer {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 400px;
+    margin: 5% auto 0;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 2%;
+}
 #logo {
     position: absolute;
     top: 0;

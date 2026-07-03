@@ -11,9 +11,42 @@
       <img src="burg.jpg" alt="logo" id="logo">
     </header>
     <main id="app">
-      <h2><i><strong>More than a sandwich.</strong></i></h2>
-      <section id="game"></section>
+      <h2 class="titre-timer">Compte à rebours</h2>
+      <div class="timer">
+        <div class="temps">
+          <h3 id="minute">02</h3>
+          <p>MINUTES</p>
+        </div>
+        <div class="temps">
+          <h3 id="secondes">00</h3>
+          <p>SECONDES</p>
+        </div>
+      </div>
     </main>
-    <script src="app.js"></script>
+    <script>
+      const minutes = document.getElementById('minute')
+      const secondes = document.getElementById('secondes')
+
+      const targetDate = new Date().getTime() + 2 * 60 * 1000;
+
+      function timer() {
+        const currentDate = new Date().getTime();
+        const distance = targetDate - currentDate;
+
+        const min = Math.floor((distance / 1000 / 60) % 60);
+        const sec = Math.floor((distance / 1000) % 60);
+
+        minutes.innerHTML = String(min).padStart(2, '0');
+        secondes.innerHTML = String(sec).padStart(2, '0');
+
+        if (distance < 0) {
+          clearInterval(interval);
+          minutes.innerHTML = '00';
+          secondes.innerHTML = '00';
+        }
+      }
+
+      const interval = setInterval(timer, 1000);
+    </script>
   </body>
 </html>

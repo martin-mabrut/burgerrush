@@ -8,8 +8,10 @@ function genererRecetteAleatoire() {
   const supplémentAuHasard = supplément[Math.floor(Math.random() * supplément.length)];
 
   const recetteAuHasard = `${sauceAuHasard}, ${condimentAuHasard}, ${viandeAuHasard}, ${fromageAuHasard}, ${supplémentAuHasard}`
-  console.log(recetteAuHasard);
   document.querySelector(".commande").innerText = `${recetteAuHasard}, chef ! `;
+
+  const numeroClientAuHasard = Math.floor(Math.random() * 9) + 1;
+  document.querySelector(".container-img-client img").src = `image/client${numeroClientAuHasard}.png`;
 
   return recetteAuHasard;
 }

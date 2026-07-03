@@ -59,6 +59,23 @@ button {
     text-align: center;
     gap: 2%;
 }
+
+.ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 700px;
+    margin: 40px auto;
+}
+
+.ingredient {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
 #logo {
     position: absolute;
     top: 0;

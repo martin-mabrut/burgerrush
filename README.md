@@ -36,8 +36,8 @@ Obligatoires
     viande = 
         ["steack bien cuit", "steack saignant"];
     condiment 
-        = ["salade", "tomates", "oignons rouges", "oignons blancs", "cornichons", "champignons", "concombres", "poivrons"];
-    sauce 
+        = ["salade", "tomates", "oignons", "cornichons", "champignons", "concombres", "poivrons"];  
+        sauce 
         = ["sauce ketchup", "sauce moutarde", "sauce barbecue", "sauce verte"];
     fromage 
         = ["emmental", "cheddar"];

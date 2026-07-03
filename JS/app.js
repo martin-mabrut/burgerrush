@@ -8,7 +8,9 @@ function main() {
 let ingredients = document.querySelectorAll(".ingredient");
 ingredients.forEach(el => el.addEventListener("click", selectOrNot));
 
-const recetteAttendue = genererRecetteAleatoire();
+let recetteAttendue = genererRecetteAleatoire();
+let bonnesCommandes = 0;
+const compteur = document.getElementById("compteur");
 
 document.querySelector("button").addEventListener("click", () => {
   const recetteJoueur = getRecetteJoueur();
@@ -16,9 +18,14 @@ document.querySelector("button").addEventListener("click", () => {
 
   if (comparerRecette(recetteJoueur, recetteAttendue)) {
     resultat.textContent = "Commande réussie ! 🤯​👌​ ";
+    bonnesCommandes += 1;
+    console.log("Nombre de bonnes commandes :" + bonnesCommandes);
   } else {
     resultat.textContent = "Raté ! 🤡🫵​ Ta recette 💩​ : " + recetteJoueur.join(", ");
+    console.log("Nombre de bonnes commandes :" + bonnesCommandes);
   }
+  compteur.textContent = "Score : " + bonnesCommandes;
+  recetteAttendue = genererRecetteAleatoire();
 });
 };
 

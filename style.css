@@ -45,7 +45,7 @@ button {
     margin-top: 5%;
 }
 
-.cadre-timer {
+.cadre-timer, .cadre-resultat {
     background-color: white;
     border-radius: 20px;
     padding: 20px;

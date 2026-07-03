@@ -31,4 +31,21 @@ Classe et id chacun, affiché par défaut
 Boutons
 Préparer les classes utilisées par le JS
 
+Convention des classes et ID :
+Obligatoires
+    viande = 
+        ["steack bien cuit", "steack saignant"];
+    condiment 
+        = ["salade", "tomates", "oignons rouges", "oignons blancs", "cornichons", "champignons", "concombres", "poivrons"];
+    sauce 
+        = ["sauce ketchup", "sauce moutarde", "sauce barbecue", "sauce verte"];
+    fromage 
+        = ["emmental", "cheddar"];
+    supplément 
+        = ["oeuf", "bacon grillé", "jambon" ];
 
+Classe selected
+
+Classe hidden
+
+Classe ingredients (clic)

@@ -9,6 +9,7 @@ h1 {
     color: white;
 }
 
+
 h2 {
     text-align: center;
     color: white;
@@ -17,6 +18,19 @@ h2 {
 header {
     position: relative;
 }
+
+button {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  margin: 20px auto;
+}   
 
 .pain-haut, .pain-bas {
     display: block;
@@ -49,7 +63,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    height: 300%;
+    height: 100%;
     padding-left: 2%;
 }
 

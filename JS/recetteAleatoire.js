@@ -9,6 +9,8 @@ function genererRecetteAleatoire() {
 
   const recetteAuHasard = `${sauceAuHasard}, ${condimentAuHasard}, ${viandeAuHasard}, ${fromageAuHasard}, ${supplémentAuHasard}`
   console.log(recetteAuHasard);
+  document.querySelector(".commande").innerText = `${recetteAuHasard}, chef ! `;
+
   return recetteAuHasard;
 }
 

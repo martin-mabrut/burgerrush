@@ -14,6 +14,50 @@ Fonctionnalités :
 
 Faire des catégories d'ingrédients facilitera les positions des ingrédients et l'algorythme de génération de recettes
 
+Convention des classes et ID :
+Obligatoires
+    viande = 
+        ["steack bien cuit", "steack saignant"];
+    condiment 
+        = ["salade", "tomates", "oignons rouges", "oignons blancs", "cornichons", "champignons", "concombres", "poivrons"];
+    sauce 
+        = ["sauce ketchup", "sauce moutarde", "sauce barbecue", "sauce verte"];
+    fromage 
+        = ["emmental", "cheddar"];
+    supplément 
+        = ["oeuf", "bacon grillé", "jambon" ];
+
+Classe selected
+
+Classe hidden
+
+Classe ingredient
+
+
+
+
+Convention des classes et ID :
+Obligatoires
+    viande = 
+        ["steack bien cuit", "steack saignant"];
+    condiment 
+        = ["salade", "tomates", "oignons rouges", "oignons blancs", "cornichons", "champignons", "concombres", "poivrons"];
+    sauce 
+        = ["sauce ketchup", "sauce moutarde", "sauce barbecue", "sauce verte"];
+    fromage 
+        = ["emmental", "cheddar"];
+    supplément 
+        = ["oeuf", "bacon grillé", "jambon" ];
+
+Classe selected
+
+Classe hidden
+
+Classe ingredient
+
+
+
+
 
 
 JS :

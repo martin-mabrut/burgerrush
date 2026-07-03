@@ -1,7 +1,6 @@
 import { genererRecetteAleatoire } from "./recetteAleatoire.js";
 import { viande, condiment, sauce, fromage, supplément, categories } from "./data.js";
 import { selectOrNot } from "./selectOrNot.js"
-import { moveIngredient } from "./moveIngredient.js";
 
 function main() {
 

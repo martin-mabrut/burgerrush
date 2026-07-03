@@ -87,3 +87,11 @@ button {
 #game {
     min-height: 200px;
 }
+
+
+.contenu-burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

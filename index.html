@@ -12,6 +12,8 @@
       <img src="burg.jpg" alt="logo" id="logo">
     </header>
     <main id="app">
+      <audio id="musique" src="subwaymusic.mp3" loop></audio>
+      <button id="btn-musique">▶️ Musique de fond 🕺</button>
       <div class="cadre-timer">
         <h2 class="titre-timer">Compte à rebours</h2>
         <p class="titre-timer">La force du Burger est-elle avec toi...!? 🫣​</p>
@@ -58,7 +60,11 @@
         </div>
 
       <img src="image/pain_bas.png" class="pain-bas">
-      <button type="button">Envoyer la commande</button>
+      <button id="btn-envoyer" type="button">Envoyer la commande</button>
+      <div id="ecran-fin" class="cache">
+        <img src="image/fin.jpg" alt="fin du jeu">
+        <h1>Fin du jeu !</h1>
+      </div>
     </main>
     <script>
       const minutes = document.getElementById('minute')
@@ -80,10 +86,31 @@
           clearInterval(interval);
           minutes.innerHTML = '00';
           secondes.innerHTML = '00';
+          finDuJeu();
         }
       }
 
       const interval = setInterval(timer, 1000);
+
+      function finDuJeu() {
+        document.querySelectorAll("main > *").forEach(el => el.classList.add("cache"));
+        document.getElementById("ecran-fin").classList.remove("cache");
+      }
+
+      const musique = document.getElementById("musique");
+      const btnMusique = document.getElementById("btn-musique");
+      let musiqueEnCours = false;
+
+      btnMusique.addEventListener("click", () => {
+        if (musiqueEnCours) {
+          musique.pause();
+          btnMusique.textContent = "▶️ Musique";
+        } else {
+          musique.play();
+          btnMusique.textContent = "⏸️ Musique";
+        }
+        musiqueEnCours = !musiqueEnCours;
+      });
     </script>
     <script src="/JS/app.js" type="module" type="module"></script>
   </body>

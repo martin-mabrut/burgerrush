@@ -137,3 +137,27 @@ button {
     justify-content: center;
     align-items: center;
 }
+
+#btn-musique {
+    display: block;
+    margin: 20px auto;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cache {
+    display: none;
+}
+
+#ecran-fin {
+    text-align: center;
+    padding-top: 50px;
+}
+
+#ecran-fin img {
+    max-width: 300px;
+}

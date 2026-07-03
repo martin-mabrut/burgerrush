@@ -12,7 +12,7 @@ let recetteAttendue = genererRecetteAleatoire();
 let bonnesCommandes = 0;
 const compteur = document.getElementById("compteur");
 
-document.querySelector("button").addEventListener("click", () => {
+document.querySelector("btn-envoyer").addEventListener("click", () => {
   const recetteJoueur = getRecetteJoueur();
   const resultat = document.getElementById("resultat");
 

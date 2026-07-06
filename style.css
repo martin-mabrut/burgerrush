@@ -13,11 +13,25 @@ body {
 h1 {
     text-align: center;
     color: white;
+    text-shadow: 
+    -0.5px -0.5px 0 #000,  
+    0.5px -0.5px 0 #000,
+    -0.5px  0.5px 0 #000,
+    0.5px  0.5px 0 #000;
 }
 
 
 h2 {
     text-align: center;
+    color: white;
+    text-shadow: 
+    -0.5px -0.5px 0 #000,  
+    0.5px -0.5px 0 #000,
+    -0.5px  0.5px 0 #000,
+    0.5px  0.5px 0 #000;
+}
+
+.apostrophe {
     color: white;
 }
 
@@ -36,8 +50,8 @@ main {
 }
 
 button {
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: green;
+  color: white;
   padding: 20px 30px;
   display: flex;
   justify-content: center;
@@ -45,7 +59,8 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-weight: 700;
-  margin: 20px auto;
+  margin: 5px auto;
+
 }   
 
 .titre-timer {
@@ -61,12 +76,24 @@ button {
     padding-top: 10px;
 }
 
-.cadre-timer, .cadre-resultat {
+.cadre-resultat {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    max-width: 400px;
+    margin: 0 auto 0;
+}
+
+.cadre-timer {
+    font-size: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-radius: 20px;
     padding: 5px 20px;
     max-width: 400px;
@@ -85,7 +112,7 @@ button {
     justify-content: center;
     gap: 20px;
     max-width: 500px;
-    margin: 40px auto;
+    margin: 5px auto;
 }
 
 .ingredients {
@@ -175,17 +202,6 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#btn-musique {
-    display: block;
-    margin: 20px auto;
-    background-color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 15px 25px;
-    font-weight: 700;
-    cursor: pointer;
 }
 
 .cache {

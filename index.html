@@ -7,13 +7,16 @@
   </head>
   <body>
     <header>
-      <h1>Bienvenue sur Burger Rush !</h1>
-      <h2><i>"More than a burger. A way of life" </i>- Un américain croisé au hasard</h2>
       <img src="burg.jpg" alt="logo" id="logo">
+      <div class="intro">
+        <h1>Bienvenue sur Burger Rush !</h1>
+        <h2><i>"More than a burger. A way of life" </i>- Un américain croisé au hasard</h2>
+        <button id="btn-musique">JOUER !</button>
+      </div>
+      
     </header>
     <main id="app">
       <audio id="musique" src="subwaymusic.mp3" loop></audio>
-      <button id="btn-musique">▶️ Musique de fond 🕺</button>
       <div class="cadre-timer">
         <h2 class="titre-timer">Compte à rebours</h2>
         <p class="titre-timer">La force du Burger est-elle avec toi...!? 🫣​</p>
@@ -66,52 +69,6 @@
         <h1>Fin du jeu !</h1>
       </div>
     </main>
-    <script>
-      const minutes = document.getElementById('minute')
-      const secondes = document.getElementById('secondes')
-
-      const targetDate = new Date().getTime() + 2 * 60 * 1000;
-
-      function timer() {
-        const currentDate = new Date().getTime();
-        const distance = targetDate - currentDate;
-
-        const min = Math.floor((distance / 1000 / 60) % 60);
-        const sec = Math.floor((distance / 1000) % 60);
-
-        minutes.innerHTML = String(min).padStart(2, '0');
-        secondes.innerHTML = String(sec).padStart(2, '0');
-
-        if (distance < 0) {
-          clearInterval(interval);
-          minutes.innerHTML = '00';
-          secondes.innerHTML = '00';
-          finDuJeu();
-        }
-      }
-
-      const interval = setInterval(timer, 1000);
-
-      function finDuJeu() {
-        document.querySelectorAll("main > *").forEach(el => el.classList.add("cache"));
-        document.getElementById("ecran-fin").classList.remove("cache");
-      }
-
-      const musique = document.getElementById("musique");
-      const btnMusique = document.getElementById("btn-musique");
-      let musiqueEnCours = false;
-
-      btnMusique.addEventListener("click", () => {
-        if (musiqueEnCours) {
-          musique.pause();
-          btnMusique.textContent = "▶️ Musique";
-        } else {
-          musique.play();
-          btnMusique.textContent = "⏸️ Musique";
-        }
-        musiqueEnCours = !musiqueEnCours;
-      });
-    </script>
     <script src="/JS/app.js" type="module" type="module"></script>
   </body>
 </html>

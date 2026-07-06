@@ -234,6 +234,26 @@ button {
     max-width: 300px;
 }
 
+.page-fin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-fin {
+    background-color: white;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #2b2b2b;
+    border-radius: 12px;
+    padding: 20px 20px;
+    text-align: center;
+    width: 50%;
+}
+
 @media (max-width: 800px) {
     .zone-infos {
         flex-direction: column;

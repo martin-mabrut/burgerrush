@@ -6,7 +6,7 @@ function lancerJeu() {
       const musique = document.getElementById("musique");
       musique.play();
 
-      // Récupère les éléments HTML affichant les minutes et secondes
+      // Récupère les éléments HTML affichant les minutes et secondes.
       const minutes = document.getElementById('minute');
       const secondes = document.getElementById('secondes');
 

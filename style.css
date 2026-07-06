@@ -11,6 +11,7 @@ body {
 }
 
 h1 {
+    font-size: 5em;
     text-align: center;
     color: white;
     text-shadow: 
@@ -33,6 +34,11 @@ h2 {
 
 .apostrophe {
     color: white;
+    text-shadow: 
+    -0.5px -0.5px 0 #000,  
+    0.5px -0.5px 0 #000,
+    -0.5px  0.5px 0 #000,
+    0.5px  0.5px 0 #000;
 }
 
 
@@ -63,6 +69,13 @@ button {
 
 }   
 
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .titre-timer {
     text-align: center;
     font-weight: 700;
@@ -74,6 +87,19 @@ button {
     display: flex;
     gap: 10px;
     padding-top: 10px;
+}
+
+.regles-jeu {
+    background-color: white;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #2b2b2b;
+    border-radius: 12px;
+    padding: 20px 20px;
+    text-align: center;
+    width: 50%;
 }
 
 .cadre-resultat {
@@ -143,13 +169,6 @@ button {
     margin: 0 auto;
 }
 
-#logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-left: 2%;
-}
-
 #game {
     min-height: 200px;
 }
@@ -173,8 +192,6 @@ button {
     justify-content: center;
     height: 70px;
 }
-
-
 
 .commande:empty {
     display: none;
@@ -215,4 +232,11 @@ button {
 
 #ecran-fin img {
     max-width: 300px;
+}
+
+@media (max-width: 800px) {
+    .zone-infos {
+        flex-direction: column;
+        align-items: center;
+    }
 }

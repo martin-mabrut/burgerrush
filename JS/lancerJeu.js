@@ -13,7 +13,7 @@ function lancerJeu() {
       const secondes = document.getElementById('secondes');
 
       // Définit l'heure de fin : maintenant + 2 minutes en millisecondes pour getTime
-      const targetDate = new Date().getTime() + 120 * 1000;
+      const targetDate = new Date().getTime() + 10 * 1000;
 
       // Fonction appelée chaque seconde pour mettre à jour le chrono (écoulement du temps)
       function timer() {
@@ -46,6 +46,8 @@ function lancerJeu() {
         document.getElementById("ecran-fin").classList.remove("cache");              // Enlève la classe cache à l'écran de fin
         musique.pause();
         document.querySelector(".score-fin").textContent = "Ton score : " + bonnesCommandes
+        const sonFin = document.getElementById("son-fin");
+        sonFin.play();
         } ;               
       }
 

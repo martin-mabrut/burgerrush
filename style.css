@@ -1,7 +1,13 @@
 body {
     font-family: sans-serif;
     margin: 0;
+    padding: 0;
     background-color: #FADB7D;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -15,13 +21,18 @@ h2 {
     color: white;
 }
 
+
 header {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 main {
     display: none;
     flex-direction: column;
+    max-width: 800px;
 }
 
 button {
@@ -44,12 +55,22 @@ button {
     margin-top: 5%;
 }
 
+.zone-infos {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+}
+
 .cadre-timer, .cadre-resultat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: white;
     border-radius: 20px;
-    padding: 20px;
+    padding: 5px 20px;
     max-width: 400px;
-    margin: 5% auto 0;
+    margin: 0 auto 0;
 }
 
 .timer {
@@ -99,7 +120,6 @@ button {
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     padding-left: 2%;
 }
 

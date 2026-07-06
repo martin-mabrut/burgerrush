@@ -7,36 +7,42 @@
   </head>
   <body>
     <header>
+      <div class="container-image">
       <img src="burg.jpg" alt="logo" id="logo">
+      </div>
+
       <div class="intro">
         <h1>Bienvenue sur Burger Rush !</h1>
         <h2><i>"More than a burger. A way of life" </i>- Un américain croisé au hasard</h2>
         <button id="btn-musique">JOUER !</button>
       </div>
-      
     </header>
     <main id="app">
       <audio id="musique" src="subwaymusic.mp3" loop></audio>
-      <div class="cadre-timer">
-        <h2 class="titre-timer">Compte à rebours</h2>
-        <p class="titre-timer">La force du Burger est-elle avec toi...!? 🫣​</p>
-        <div class="timer">
-          <div class="temps">
-            <h3 id="minute">02</h3>
-            <p>MINUTES</p>
-          </div>
-          <div class="temps">
-            <h3 id="secondes">00</h3>
-            <p>SECONDES</p>
+
+      <div class="zone-infos">
+        <div class="cadre-timer">
+          <h2 class="titre-timer">CHRONO :</h2>
+          <div class="timer">
+            <div class="temps">
+              <h3 id="minute">02</h3>
+              <p>MIN</p>
+            </div>
+            <div class="temps">
+              <h3 id="secondes">00</h3>
+              <p>SEC</p>
+            </div>
           </div>
         </div>
+
+        <div class="cadre-resultat">
+          <p class="commande"></p>
+          <div class="container-img-client"><img src="image/client1.png" alt="1er client" class="img-client"></div>
+          <p id="resultat"></p>
+          <p id="compteur">Score : 0</p>
+        </div>
       </div>
-      <div class="cadre-resultat">
-        <p class="commande"></p>
-        <div class="container-img-client"><img src="image/client1.png" alt="1er client" class="img-client"></div>
-        <p id="resultat"></p>
-        <p id="compteur">Score : 0</p>
-      </div>
+
       <div class="zone-de-jeu">
       <div class="ingredients">
         <img src="image/salade.png" class="ingredient condiment" id="salade" title="salade" >

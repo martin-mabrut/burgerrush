@@ -2,8 +2,11 @@ import { genererRecetteAleatoire } from "./recetteAleatoire.js";
 import { viande, condiment, sauce, fromage, supplément, categories } from "./data.js";
 import { selectOrNot } from "./selectOrNot.js"
 import { comparerRecette, getRecetteJoueur } from "./comparatifRecette.js"; //import rajouté
+import { lancerJeu } from "./lancerJeu.js";
 
 function main() {
+
+document.getElementById("btn-musique").addEventListener("click", lancerJeu);
 
 let ingredients = document.querySelectorAll(".ingredient");
 ingredients.forEach(el => el.addEventListener("click", selectOrNot));

@@ -12,7 +12,7 @@ let recetteAttendue = genererRecetteAleatoire();
 let bonnesCommandes = 0;
 const compteur = document.getElementById("compteur");
 
-document.querySelector("btn-envoyer").addEventListener("click", () => {
+document.getElementById("btn-envoyer").addEventListener("click", () => {
   const recetteJoueur = getRecetteJoueur();
   const resultat = document.getElementById("resultat");
 
@@ -20,12 +20,20 @@ document.querySelector("btn-envoyer").addEventListener("click", () => {
     resultat.textContent = "Commande réussie ! 🤯​👌​ ";
     bonnesCommandes += 1;
     console.log("Nombre de bonnes commandes :" + bonnesCommandes);
+
+    let ingredientsSelected = document.querySelectorAll(".selected");
+    ingredientsSelected.forEach(el => {
+      document.querySelector(".ingredients").appendChild(el);
+      el.classList.remove("selected");
+    });
+
+
+    recetteAttendue = genererRecetteAleatoire();
   } else {
     resultat.textContent = "Raté ! 🤡🫵​ Ta recette 💩​ : " + recetteJoueur.join(", ");
     console.log("Nombre de bonnes commandes :" + bonnesCommandes);
   }
   compteur.textContent = "Score : " + bonnesCommandes;
-  recetteAttendue = genererRecetteAleatoire();
 });
 };
 

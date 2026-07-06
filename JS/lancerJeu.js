@@ -13,7 +13,7 @@ function lancerJeu() {
       const secondes = document.getElementById('secondes');
 
       // Définit l'heure de fin : maintenant + 2 minutes en millisecondes pour getTime
-      const targetDate = new Date().getTime() + 120 * 1000;
+      const targetDate = new Date().getTime() + 60 * 1000;
 
       // Fonction appelée chaque seconde pour mettre à jour le chrono (écoulement du temps)
       function timer() {

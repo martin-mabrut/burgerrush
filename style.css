@@ -257,6 +257,7 @@ button {
 @media (max-width: 800px) {
     .zone-infos {
         flex-direction: column;
+        justify-content: center;
         align-items: center;
     }
 }

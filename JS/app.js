@@ -4,6 +4,8 @@ import { selectOrNot } from "./selectOrNot.js"
 import { comparerRecette, getRecetteJoueur } from "./comparatifRecette.js"; //import rajouté
 import { lancerJeu } from "./lancerJeu.js";
 
+export let bonnesCommandes = 0;
+
 function main() {
 
 document.getElementById("btn-musique").addEventListener("click", lancerJeu);
@@ -12,7 +14,6 @@ let ingredients = document.querySelectorAll(".ingredient");
 ingredients.forEach(el => el.addEventListener("click", selectOrNot));
 
 let recetteAttendue = genererRecetteAleatoire();
-let bonnesCommandes = 0;
 const compteur = document.getElementById("compteur");
 
 document.getElementById("btn-envoyer").addEventListener("click", () => {

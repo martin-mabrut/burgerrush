@@ -1,3 +1,5 @@
+import { bonnesCommandes } from "./app.js";
+
 function lancerJeu() {
 
     document.querySelector(".intro").style.display = "none";
@@ -11,7 +13,7 @@ function lancerJeu() {
       const secondes = document.getElementById('secondes');
 
       // Définit l'heure de fin : maintenant + 2 minutes en millisecondes pour getTime
-      const targetDate = new Date().getTime() + 2 * 60 * 1000;
+      const targetDate = new Date().getTime() + 120 * 1000;
 
       // Fonction appelée chaque seconde pour mettre à jour le chrono (écoulement du temps)
       function timer() {
@@ -41,9 +43,11 @@ function lancerJeu() {
       // Cache le jeu et affiche l'écran de fin
       function finDuJeu() {
         document.querySelectorAll("main > *").forEach(el => el.classList.add("cache"));  // Cache tous les enfants directs de main en lui attribuant la classe cache (en display none)
-        document.getElementById("ecran-fin").classList.remove("cache");                  // Enlève la classe cache à l'écran de fin
+        document.getElementById("ecran-fin").classList.remove("cache");              // Enlève la classe cache à l'écran de fin
+        musique.pause();
+        document.querySelector(".score-fin").textContent = "Ton score : " + bonnesCommandes
+        } ;               
       }
-}
 
 export { lancerJeu };
 

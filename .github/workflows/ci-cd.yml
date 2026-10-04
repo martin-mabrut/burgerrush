@@ -1,0 +1,82 @@
+# Nom affiché dans l'onglet "Actions" de GitHub
+name: CI/CD
+
+# Déclencheurs : quand le workflow doit-il s'exécuter ?
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# Droits par défaut du jeton GITHUB_TOKEN : lecture seule du code
+permissions:
+  contents: read
+
+jobs:
+  # Job 1 : analyse statique du code (CI)
+  lint:
+    name: Lint (ESLint + HTMLHint)
+    runs-on: ubuntu-latest
+
+    steps:
+      # Récupère le code du dépôt sur la machine virtuelle
+      - name: Récupérer le code
+        uses: actions/checkout@v5
+
+      # Installe Node.js (même version majeure qu'en local)
+      - name: Installer Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      # Installe exactement les versions du package-lock.json
+      - name: Installer les dépendances
+        run: npm ci
+
+      # Lance les linters : si une erreur est trouvée, le job échoue
+      - name: Lancer le lint
+        run: npm run lint
+
+  # Job 2 : déploiement sur GitHub Pages (CD)
+  deploy:
+    name: Déploiement sur GitHub Pages
+    # Attend la réussite du job lint : si lint échoue, deploy ne s'exécute pas
+    needs: lint
+    # Uniquement sur un push vers main (jamais sur une pull request)
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    # Droits nécessaires pour publier sur Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    # Environnement de déploiement : affiche l'URL du site dans GitHub
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Un seul déploiement à la fois ; celui en cours n'est pas annulé
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v5
+
+      # Prépare la configuration de GitHub Pages
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Empaquette les fichiers du site (racine du dépôt) en artefact
+      - name: Envoyer les fichiers du site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      # Publie l'artefact sur GitHub Pages
+      - name: Déployer
+        id: deployment
+        uses: actions/deploy-pages@v4

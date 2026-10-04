@@ -1,5 +1,4 @@
 import { genererRecetteAleatoire } from "./recetteAleatoire.js";
-import { viande, condiment, sauce, fromage, supplément, categories } from "./data.js";
 import { selectOrNot } from "./selectOrNot.js"
 import { comparerRecette, getRecetteJoueur } from "./comparatifRecette.js"; //import rajouté
 import { lancerJeu } from "./lancerJeu.js";

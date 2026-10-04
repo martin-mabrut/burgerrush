@@ -1,0 +1,18 @@
+{
+  "name": "burgerrush",
+  "version": "1.0.0",
+  "description": "Burger Rush : mini-jeu web en HTML, CSS et JavaScript",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint:js": "eslint .",
+    "lint:html": "htmlhint \"**/*.html\"",
+    "lint": "npm run lint:js && npm run lint:html"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "htmlhint": "^1.9.2"
+  }
+}

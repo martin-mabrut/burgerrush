@@ -1,0 +1,34 @@
+# Nom affiché dans l'onglet "Actions" de GitHub
+name: CI/CD
+
+# Déclencheurs : quand le workflow doit-il s'exécuter ?
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # Job 1 : analyse statique du code (CI)
+  lint:
+    name: Lint (ESLint + HTMLHint)
+    runs-on: ubuntu-latest
+
+    steps:
+      # Récupère le code du dépôt sur la machine virtuelle
+      - name: Récupérer le code
+        uses: actions/checkout@v5
+
+      # Installe Node.js (même version majeure qu'en local)
+      - name: Installer Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      # Installe exactement les versions du package-lock.json
+      - name: Installer les dépendances
+        run: npm ci
+
+      # Lance les linters : si une erreur est trouvée, le job échoue
+      - name: Lancer le lint
+        run: npm run lint
